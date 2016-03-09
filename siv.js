@@ -35,11 +35,6 @@ function informe_YesterDay() {
 	return informe_formatDate(new Date(yday));
 }
 
-/*
- * function LastWeek() { var d = new Date(); yday = d.setDate(d.getDate() - 7);
- * return informe_formatDate(new Date(yday)); }
- */
-
 function LastSevenDay() {
 	var d = new Date();
 	yday = d.setDate(d.getDate() - 7);
@@ -77,13 +72,13 @@ function Last30Days() {
 }
 
 function HideDatePickerIcon() {
-	document.getElementById("calenderStartId").style.visibility = "hidden";
-	document.getElementById("calenderEndId").style.visibility = "hidden";
+	document.getElementById("calenderStartId").style.display = "none";
+	document.getElementById("calenderEndId").style.display = "none";
 }
 
 function ShoweDatePickerIcon() {
-	document.getElementById("calenderStartId").style.visibility = "";
-	document.getElementById("calenderEndId").style.visibility = "";
+	document.getElementById("calenderStartId").style.display = "";
+	document.getElementById("calenderEndId").style.display = "";
 }
 
 function setCalenderDate(from, to) {
