@@ -1,0 +1,232 @@
+#calendar_date_selector_bgclicktoclose {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	top:0;
+	left: 0;
+	z-index: 202;
+	}
+
+.calendar_date_selector_hidden {
+	display: none;
+}
+.calendar_date_selector_fieldnotes {
+	font-size: 80%;
+	color: #666;
+	clear:both;
+}
+#calendar_date_selector, #calendar_date_selector * {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+#calendar_date_selector {
+	background-color: #F0F0F0;
+	width: 15.8em;
+	overflow: visible;
+	text-align: center;
+	border: 1px solid #CCC;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 202;
+}
+#calendar_date_selector .theShadow {
+	z-index: 200;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+	-moz-opacity:0.3;
+	background: #000;
+	position:absolute;
+}
+#calendar_date_selector h3 {
+	width: auto;
+	background-color: #FFCC99;
+}
+.calendar_date_selector_field_disabled {
+	background-color: #F0F0F0;
+	border: 1px solid #CCC;
+	padding: 2px;
+	margin: 0;
+}
+/*
+************************** REMOVE DEFAULT FORMATTING 
+*/
+#calendar_date_selector, #calendar_date_selector table, #calendar_date_selector tr, #calendar_date_selector th, #calendar_date_selector td {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+************************** CALENDAR BORDERS	
+*/
+#calendar_date_selector table,
+#calendar_date_selector table th,
+#calendar_date_selector table td {
+	/*border-collapse: collapse;*/
+}
+#calendar_date_selector .calendar_date_selector_column {
+	width: 2em;
+}
+#calendar_date_selector .calendar_date_selector_wkcolumn {
+	width: 2em;
+	color: #FFF;
+	border-right: 1px solid #CCC;
+	background-color: #999;
+}
+/*#calendar_date_selector table tr {
+	border-collapse: collapse;
+}
+#calendar_date_selector table th {
+	border-collapse: collapse;
+}
+#calendar_date_selector table td {
+	border-collapse: collapse;
+}*/
+
+/*
+************************** REMOVE DEFAULT FORMATTING 
+*/
+#calendar_date_selector th {
+	font-size: 70%;
+	text-align: center;
+	padding: 2px;
+	margin: 1px;
+	/*background-color: #FFF;*/
+}
+#calendar_date_selector td {
+	/*font-size: 85%;*/
+	text-align: center;
+	margin: 1px;
+	/*background-color: #FFF;*/
+}
+
+#calendar_date_selector #calendar_date_selector_grid th {
+	cursor:default;
+}
+
+#calendar_date_selector #calendar_date_selector_grid td, 
+#calendar_date_selector #calendar_date_selector_grid td a {
+	font-size: x-small;
+}
+#calendar_date_selector td {
+	
+}
+#calendar_date_selector table .calendar_date_selector_nonselectable {
+	padding: 2px 0;
+	background-image:   url(../images/bgNonSelectable.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: #666;
+}
+#calendar_date_selector table #calendar_date_selector_currentdate {
+	border: 1px solid #00C;
+}
+#calendar_date_selector table td a {
+	display: block;
+	padding: 2px;
+	color: #000;
+}
+#calendar_date_selector table td.calendar_date_selector_currentdate a {
+	display: block;
+	padding: 1px;
+	border: 1px solid #C00;
+	font-weight: bold;
+}
+
+#calendar_date_selector table#calendar_date_selector_grid td a:hover {
+	border-top: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	background-color: #E2E2E2;
+	color: #00F;
+	padding: 1px;
+}
+
+#calendar_date_selector table td.calendar_date_selector_selecteddate a,
+#calendar_date_selector table td.calendar_date_selector_selecteddate a:hover {
+	display: block;
+	background-color: #CCC;
+	font-weight: bold;
+}
+
+#calendar_date_selector table {
+	float: none;
+	clear: both;
+	margin: 10px auto;
+	
+}
+#calendar_date_selector table#calendar_date_selector_monthpicker {
+	width: 100%;
+	margin: 0 auto;
+}
+#calendar_date_selector table#calendar_date_selector_monthpicker col {
+	width: 17%;
+}
+#calendar_date_selector table#calendar_date_selector_monthpicker td a {
+	display: block;
+	width: 100%;
+	padding: 1px 0;
+	text-align: center;
+	background-color: #CCC;
+	border-top: 1px solid #f0f0f0;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #f0f0f0;
+	font-size: 80%;
+	font-weight: bold;
+	margin: 0;
+}
+#calendar_date_selector table#calendar_date_selector_monthpicker td strong a, 
+#calendar_date_selector table#calendar_date_selector_monthpicker td strong a:hover {
+	/*background-color: #666;*/
+	background-image: url(../images/Dark_Red.jpg);
+	color: #FFF;
+}
+
+#calendar_date_selector #calendar_date_selector_incrementyear {
+	margin: 10px 0;
+	font-weight: bold;
+}
+#calendar_date_selector #calendar_date_selector_incrementyear a {
+	text-align: center;
+	padding: 1px 5px;
+	background-color: #CCC;
+	border-top: 1px solid #f0f0f0;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #f0f0f0;
+	text-decoration: none;
+	font-weight: bold;
+	color: #00F;
+}
+#calendar_date_selector #calendar_date_selector_selecttoday {
+	display: block;
+	width: 100%;
+	border-top: 1px solid #CCC;
+}
+#calendar_date_selector #calendar_date_selector_selecttoday a {
+	display: block;
+	width: 100%;
+	font-size: 80%;
+	padding: 5px 0;
+}
+#calendar_date_selector div.calendar_date_selector_selecttoday_nonselectable {
+	display: block;
+	width: 100%;
+	padding: 5px 0;
+	text-decoration: line-through;
+	color:#999;
+}
+#calendar_date_selector_headerbar {
+	line-height: 24px;
+	text-align: left;
+	padding-left: 5px;
+	/*background-color: #666;*/
+	background-image: url(../images/Dark_Red.jpg);
+	color: #FFF;
+	font-weight: bold;
+}

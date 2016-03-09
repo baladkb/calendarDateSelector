@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>siv.js</title>
+
+<link rel="stylesheet" type="text/css" href="calendar/component_calendar_date_selector.css">
+<script src="calendar/date_utilities.js" type="text/javascript"></script>
+<script src="calendar/component_calendar_date_selector.js" type="text/javascript"></script>
+<script src="calendar/component_calendar_date_selector_rules.js" type="text/javascript"></script>
+<script src="calendar/iframe_shim_utilities.js" type="text/javascript"></script>
+<script src="calendar/utilities.js" type="text/javascript"></script>
+<script src="siv.js" type="text/javascript"></script>
+
+<style type="text/css">
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 15px;
+}
+
+.dlform_Res {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.dlform_Res dd dl dt {
+	float: left;
+	width: 30%;
+	text-align: right;
+	padding: 0 1% 4px 0;
+}
+
+.dlform_Res dd dl dd {
+	float: left;
+	clear: right;
+	width: 67%;
+	padding: 0 0 4px 0;
+}
+
+.dlform_Res dt {
+	display: block;
+	width: 30%;
+	margin: 0px;
+	padding: 8px 1% 8px 0;
+	float: left;
+	clear: left;
+	text-align: right;
+	font-weight: bold;
+}
+
+.dlform_Res dd {
+	display: block;
+	width: 67%;
+	margin: 0px;
+	padding: 8px 0 8px 1%;
+	float: left;
+	font-weight: normal;
+}
+</style>
+</head>
+
+<body>
+	<h1>Chose the dates : (Today, Yesterday, LastWeek, Last Month, Last 7 Days, Last 30 Days)</h1>
+	<div style="text-align: center;">
+		<select onchange="informe_selectDate();" class="right-node"
+			id="selectDatesId">
+			<option value="Select">Date Select</option>
+			<option value="0">Today</option>
+			<option value="1">Yesterday</option>
+			<option value="2">Last Week</option>
+			<option value="3">Last Month</option>
+			<option value="4">Last 7 Days</option>
+			<option value="5">Last 30 Days</option>
+		</select>
+	</div>
+	<hr>
+	<dl class="dlform_Res">
+		<dt>
+			<label for="vLine">From Date :</label>
+		</dt>
+		<dd>
+			<input type="text" name="frmFromDate" Id="fromDateID" size="11"
+				value="" readonly="readonly" class="calendar_date_selector_field"
+				onchange="javascript:updateInitial('A',this);"> <a
+				href="javascript:showCalendar(0);"> <img
+				src="images/show-calendar.gif" id="calenderStartId" border="0"
+				align="absmiddle" alt="Select from Date" /> <script
+					type="text/javascript">
+					var dtCurrDate = new Date();
+					var iCurrentYear = dtCurrDate.getFullYear();
+					var iCurrentMonth = dtCurrDate.getMonth();
+					var iCurrentDayOfMonth = dtCurrDate.getDate();
+					var sInputDateFormat0 = "MM-dd-yyyy";
+					var aCalendar_MonthsAbrv = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+					var aCalendar_Months = [ "January", "February", "March", "April", "May", "June", "July", "August",
+							"September", "October", "November", "December" ];
+					var aCalendar_DaysOfWeekAbrv = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+					var aCalendar_DaysOfWeek = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+					var oCalendarConfiguration0 = new CalendarConfiguration("Select From date", "Close calendar", false, "",
+							"", 0, 0, "Hoy - ", "MMMM dd, yyyy");
+					var oDateRange = new DateRangeRule('*', iCurrentYear, iCurrentMonth + 1, iCurrentDayOfMonth);
+					var oCalendarRules0 = new CalendarRules();
+					oCalendarRules0.addRule(oDateRange);
+					oCalendarRules0.setForEnablingDates(true);
+				</script>
+			</a>
+
+		</dd>
+	</dl>
+	<dl class="dlform_Res">
+		<dt>
+			<label for="vLine">To Date : </label>
+		</dt>
+		<dd>
+			<input type="text" name="frmToDate" id="idToDate" size="11" value=""
+				readonly="readonly" class="calendar_date_selector_field"
+				onchange="javascript:updateInitial('B',this);"> <a
+				href="javascript:showCalendar(1);"> <img
+				src="images/show-calendar.gif" id="calenderEndId" border="0"
+				align="absmiddle" alt="Select To Date" /> <script
+					type="text/javascript">
+					var dtCurrDate = new Date();
+					var iCurrentYear = dtCurrDate.getFullYear();
+					var iCurrentMonth = dtCurrDate.getMonth();
+					var iCurrentDayOfMonth = dtCurrDate.getDate();
+					var sInputDateFormat1 = "MM-dd-yyyy";
+					var aCalendar_MonthsAbrv = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+					var aCalendar_Months = [ "January", "February", "March", "April", "May", "June", "July", "August",
+							"September", "October", "November", "December" ];
+					var aCalendar_DaysOfWeekAbrv = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+					var aCalendar_DaysOfWeek = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+					var oCalendarConfiguration1 = new CalendarConfiguration(
+							"Select To date", "Close calendar", true, "", "", 0, 0, "Hoy - ", "MMMM dd, yyyy");
+					var oDateRange = new DateRangeRule('*', iCurrentYear, iCurrentMonth + 1, iCurrentDayOfMonth);
+					var oCalendarRules1 = new CalendarRules();
+					oCalendarRules1.addRule(oDateRange);
+					oCalendarRules1.setForEnablingDates(true);
+				</script>
+			</a>
+		</dd>
+	</dl>
+</body>
+</html>
