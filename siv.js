@@ -17,7 +17,7 @@ function updateInitial(sCont, sVal) {
 	}
 }
 
-function infome_currentDate() {
+function siv_currentDate() {
 	var dateObj = new Date();
 	return informe_formatDate(dateObj);
 }
@@ -92,7 +92,7 @@ function informe_selectDate() {
 	HideDatePickerIcon();
 	switch (dateSelected) {
 	case "0":
-		setCalenderDate(infome_currentDate(), infome_currentDate());
+		setCalenderDate(siv_currentDate(), siv_currentDate());
 		break;
 	case "1":
 		setCalenderDate(informe_YesterDay(), informe_YesterDay());
@@ -104,10 +104,10 @@ function informe_selectDate() {
 		setCalenderDate(LastMonthStart(), LastMonthEnd());
 		break;
 	case "4":
-		setCalenderDate(infome_currentDate(), LastSevenDay());
+		setCalenderDate(siv_currentDate(), LastSevenDay());
 		break;
 	case "5":
-		setCalenderDate(infome_currentDate(), Last30Days());
+		setCalenderDate(siv_currentDate(), Last30Days());
 		break;
 	default:
 		ShoweDatePickerIcon();
