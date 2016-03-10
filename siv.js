@@ -74,23 +74,12 @@ var DateSelector = {
 		lddate = DateSelector.siv_formatDate(new Date(yday));
 		return lddate;
 	},
-	HideDatePickerIcon : function() {
-		console.log("Hide");
-		document.getElementById("calenderStartId").style.visibility = "hidden";
-		document.getElementById("calenderEndId").style.visibility = "hidden";
-	},
-	ShoweDatePickerIcon : function() {
-		console.log("Open");
-		document.getElementById("calenderStartId").style.visibility = "";
-		document.getElementById("calenderEndId").style.visibility = "";
-	},
 	setCalenderDate : function(from, to) {
 		document.getElementById("calendar_date_selector_field_instance0").value = from;
 		document.getElementById("calendar_date_selector_field_instance1").value = to;
 	},
 	selectFromToDates : function() {
 		dateSelected = document.getElementById('selectDatesId').value;
-		DateSelector.HideDatePickerIcon();
 		switch (dateSelected) {
 		case "0":
 			DateSelector.setCalenderDate(DateSelector.siv_currentDate(),
@@ -117,7 +106,6 @@ var DateSelector = {
 					DateSelector.Last30Days());
 			break;
 		default:
-			DateSelector.ShoweDatePickerIcon();
 		}
 	}
 }
