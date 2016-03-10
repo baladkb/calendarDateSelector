@@ -84,7 +84,7 @@ input {
 <body>
 	<h1><b>Select the dates</b> : (Today, Yesterday, LastWeek, Last Month, Last 7 Days, Last 30 Days)</h1>
 	<div style="text-align: center;">
-		<select  onchange="informe_selectDate();" class="right-node siv-select"
+		<select  onchange="javascript:DateSelector.informe_selectDate();" class="right-node siv-select"
 			id="selectDatesId">
 			<option value="Select">Date Select</option>
 			<option value="0">Today</option>
@@ -104,8 +104,8 @@ input {
 		<dd>
 			<input type="text" name="frmFromDate" Id="fromDateID" size="11"
 				value="" readonly="readonly" class="calendar_date_selector_field"
-				onchange="javascript:updateInitial('A',this);"> <a
-				href="javascript:showCalendar(0);"> <img
+				onchange="javascript:DateSelector.updateInitial('A',this);"> <a
+				href="javascript:DateSelector.showCalendar(0,1);"> <img
 				src="images/show-calendar.gif" id="calenderStartId" border="0"
 				align="absmiddle" alt="Select from Date" /> <script
 					type="text/javascript">
@@ -137,8 +137,8 @@ input {
 		<dd>
 			<input type="text" name="frmToDate" id="idToDate" size="11" value=""
 				readonly="readonly" class="calendar_date_selector_field"
-				onchange="javascript:updateInitial('B',this);"> <a
-				href="javascript:showCalendar(1);"> <img
+				onchange="javascript:DateSelector.updateInitial('B',this);"> <a
+				href="javascript:DateSelector.showCalendar(1,2);"> <img
 				src="images/show-calendar.gif" id="calenderEndId" border="0"
 				align="absmiddle" alt="Select To Date" /> <script
 					type="text/javascript">
