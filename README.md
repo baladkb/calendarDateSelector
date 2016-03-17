@@ -1,7 +1,7 @@
 # calendarDateSelector
 Select particular Dates(From date and To date) using JavaScript.
 
-CalendarDateSelector is a perticular date selector listed below for From and To date  
+CalendarDateSelector is a particular date selector listed below for From and To date  
 
 - Today
 - Yesterday
