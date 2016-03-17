@@ -377,7 +377,7 @@ function calendarComponent_Init() {
 		if (elCalendarFields[i].getAttribute("disabled") != true) {
 			newNodeLink = document.createElement("a");
 			var newNoneLinkImage = document.createElement("img");
-			newNoneLinkImage.setAttribute("src",+ sImagesDirectoryPath + "show-calendar.gif");
+			newNoneLinkImage.setAttribute("src", sImagesDirectoryPath + "show-calendar.gif");
 			newNoneLinkImage.setAttribute("border","0");
 			newNoneLinkImage.setAttribute("align","absmiddle");
 			//Get Calendar Icon Alt Text from oCalendarConfiguration
