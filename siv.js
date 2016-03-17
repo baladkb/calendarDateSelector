@@ -14,9 +14,9 @@ var DateSelector = {
 	},
 	updateInitial : function(sCont, sVal) {
 		if (sCont == 'A') {
-			document.getElementById('fromDateID').value = sVal.value;
+			document.getElementById('calendar_date_selector_field_instance0').value = sVal.value;
 		} else {
-			document.getElementById('idToDate').value = sVal.value;
+			document.getElementById('calendar_date_selector_field_instance1').value = sVal.value;
 		}
 	},
 	siv_currentDate : function() {
