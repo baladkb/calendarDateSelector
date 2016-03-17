@@ -31,6 +31,12 @@ var DateSelector = {
 		ddmmyyy = day + "/" + month + "/" + year;
 		return ddmmyyy;
 	},
+	siv_formatDateN : function(date) {
+		var dd = date.getDate();
+		var mm = date.getMonth() + 1;
+		var y = date.getFullYear();
+		return dd + "/" + mm + "/" + y;
+	},
 	siv_YesterDay : function() {
 		d = new Date();
 		yday = d.setDate(d.getDate() - 1);
@@ -46,20 +52,20 @@ var DateSelector = {
 	LastMonthStart : function() {
 		date = new Date(), y = date.getFullYear(), m = date.getMonth() - 1;
 		firstDay = new Date(y, m, 1);
-		lmsdate = DateSelector.siv_formatDate(firstDay);
+		lmsdate = DateSelector.siv_formatDateN(firstDay);
 		return lmsdate;
 	},
 	LastMonthEnd : function() {
 		date = new Date(), y = date.getFullYear(), m = date.getMonth() - 1;
 		lastDay = new Date(y, m + 1, 0);
-		lmedate = DateSelector.siv_formatDate(lastDay);
+		lmedate = DateSelector.siv_formatDateN(lastDay);
 		return lmedate;
 	},
 	LastWeekStart : function() {
-		d = new Date();
-		from = d.setTime(d.getTime() - 6 * 24 * 60 * 60 * 1000);
-		lwsdate = DateSelector.siv_formatDate(new Date(from));
-		return lwsdate;
+		date = new Date();
+		lwstart = DateSelector.siv_formatDate(new Date(new Date(date.getTime()
+				- ((6 + date.getDay()) * 24 * 60 * 60 * 1000))));
+		return lwstart;
 	},
 	LatWeekEnd : function() {
 		d = new Date()
@@ -98,12 +104,12 @@ var DateSelector = {
 					DateSelector.LastMonthEnd());
 			break;
 		case "4":
-			DateSelector.setCalenderDate(DateSelector.siv_currentDate(),
-					DateSelector.LastSevenDay());
+			DateSelector.setCalenderDate(DateSelector.LastSevenDay(),
+					DateSelector.siv_currentDate());
 			break;
 		case "5":
-			DateSelector.setCalenderDate(DateSelector.siv_currentDate(),
-					DateSelector.Last30Days());
+			DateSelector.setCalenderDate(DateSelector.Last30Days(),
+					DateSelector.siv_currentDate());
 			break;
 		default:
 		}
