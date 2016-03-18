@@ -15,6 +15,9 @@
 body {
 	font-family: sans-serif;
 	overflow: hidden;
+	background: url(images/bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: fixed;
 }
 
 h1 {
@@ -28,11 +31,10 @@ input {
 }
 
 .dlform_Res {
-	display: block;
-	width: 100%;
+	display: inline-block;
+	width: 30%;
 	margin: 0;
 	padding: 0;
-	float: left;
 }
 
 .dlform_Res dd dl dt {
@@ -51,11 +53,11 @@ input {
 
 .dlform_Res dt {
 	display: block;
-	width: 20%;
+	width: 100%;
 	margin: 0px;
 	padding: 8px 1% 8px 0;
 	float: left; clear : left;
-	text-align: right;
+	text-align: center;
 	font-weight: bold;
 	clear: left;
 }
@@ -66,7 +68,8 @@ input {
 
 .dlform_Res dd {
 	display: block;
-	width: 15%;
+	width: 100%;
+	text-align: center;
 	margin: 0px;
 	padding: 8px 0 8px 1%;
 	float: left;
@@ -74,14 +77,30 @@ input {
 }
 
 .siv-select {
-	width: 12%;
+	width: 40%;
 	font-size: 15px;
-	border: 6px solid #A2D1A8;
+	border: 3px solid #ccc;
+}
+.main{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 600px;
+}
+.main_inner{
+	float: left;
+	width: 100%;
+	box-shadow: 0px 0px 2px 2px #AFAFAF;
+	background: rgba(255,255,255,0.6);
+	padding: 20px;
+	margin-top: 100px;
 }
 </style>
 </head>
 
 <body>
+	<div class="main">
+	<div class="main_inner">
 	<h1><b>Select the dates</b> : (Today, Yesterday, LastWeek, Last Month, Last 7 Days, Last 30 Days)</h1>
 	<div style="text-align: center;">
 		<select  onchange="javascript:DateSelector.selectFromToDates();" class="right-node siv-select"
@@ -96,7 +115,7 @@ input {
 		</select>
 	</div>
 	<hr>
-	<div  style="text-align:center;" >
+	<div  style="text-align:center;float: left;    width: 100%;" >
 	<dl class="dlform_Res">
 		<dt>
 			<label for="vLine">From Date :</label>
@@ -162,6 +181,8 @@ input {
 			</a>
 		</dd>
 	</dl>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
