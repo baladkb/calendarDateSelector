@@ -4,24 +4,9 @@ var DateSelector = {
 	init : function() {
 		console.log("init")
 	},
-	showCalendar : function(idCalendar, isCalledFromOverlay) {
-		this.sCalledFor;
-		if (isCalledFromOverlay) {
-			sCalledFor = 'calendar_date_selector_field';
-		}
-		calendarComponent_Init(sCalledFor);
-		calendarComponent_Show(idCalendar, sCalledFor);
-	},
-	updateInitial : function(sCont, sVal) {
-		if (sCont == 'A') {
-			document.getElementById('calendar_date_selector_field_instance0').value = sVal.value;
-		} else {
-			document.getElementById('calendar_date_selector_field_instance1').value = sVal.value;
-		}
-	},
 	siv_currentDate : function() {
 		dateObj = new Date();
-		currentD = DateSelector.siv_formatDate(dateObj);
+		currentD = this.siv_formatDate(dateObj);
 		return currentD;
 	},
 	siv_formatDate : function(date) {
@@ -40,30 +25,30 @@ var DateSelector = {
 	siv_YesterDay : function() {
 		d = new Date();
 		yday = d.setDate(d.getDate() - 1);
-		ydate = DateSelector.siv_formatDate(new Date(yday));
+		ydate = this.siv_formatDate(new Date(yday));
 		return ydate;
 	},
-	LastSevenDay : function() {
+	lastSevenDay : function() {
 		d = new Date();
 		yday = d.setDate(d.getDate() - 7);
-		ldate = DateSelector.siv_formatDate(new Date(yday));
+		ldate = this.siv_formatDate(new Date(yday));
 		return ldate;
 	},
-	LastMonthStart : function() {
+	lastMonthStart : function() {
 		date = new Date(), y = date.getFullYear(), m = date.getMonth() - 1;
 		firstDay = new Date(y, m, 1);
-		lmsdate = DateSelector.siv_formatDateN(firstDay);
+		lmsdate = this.siv_formatDateN(firstDay);
 		return lmsdate;
 	},
 	LastMonthEnd : function() {
 		date = new Date(), y = date.getFullYear(), m = date.getMonth() - 1;
 		lastDay = new Date(y, m + 1, 0);
-		lmedate = DateSelector.siv_formatDateN(lastDay);
+		lmedate = this.siv_formatDateN(lastDay);
 		return lmedate;
 	},
-	LastWeekStart : function() {
+	lastWeekStart : function() {
 		date = new Date();
-		lwstart = DateSelector.siv_formatDate(new Date(new Date(date.getTime()
+		lwstart = this.siv_formatDate(new Date(new Date(date.getTime()
 				- ((6 + date.getDay()) * 24 * 60 * 60 * 1000))));
 		return lwstart;
 	},
@@ -71,13 +56,13 @@ var DateSelector = {
 		d = new Date()
 		to = d.setTime(d.getTime() - (d.getDay() ? d.getDay() : 7) * 24 * 60
 				* 60 * 1000);
-		lwedate = DateSelector.siv_formatDate(new Date(to));
+		lwedate = this.siv_formatDate(new Date(to));
 		return lwedate;
 	},
-	Last30Days : function() {
+	last30Days : function() {
 		d = new Date();
 		yday = d.setDate(d.getDate() - 30);
-		lddate = DateSelector.siv_formatDate(new Date(yday));
+		lddate = this.siv_formatDate(new Date(yday));
 		return lddate;
 	},
 	setCalenderDate : function(from, to) {
@@ -88,28 +73,28 @@ var DateSelector = {
 		dateSelected = document.getElementById('selectDatesId').value;
 		switch (dateSelected) {
 		case "0":
-			DateSelector.setCalenderDate(DateSelector.siv_currentDate(),
-					DateSelector.siv_currentDate());
+			this.setCalenderDate(this.siv_currentDate(),
+					this.siv_currentDate());
 			break;
 		case "1":
-			DateSelector.setCalenderDate(DateSelector.siv_YesterDay(),
-					DateSelector.siv_YesterDay());
+			DateSelector.setCalenderDate(this.siv_YesterDay(),
+					this.siv_YesterDay());
 			break;
 		case "2":
-			DateSelector.setCalenderDate(DateSelector.LastWeekStart(),
-					DateSelector.LatWeekEnd());
+			this.setCalenderDate(this.lastWeekStart(),
+					this.LatWeekEnd());
 			break;
 		case "3":
-			DateSelector.setCalenderDate(DateSelector.LastMonthStart(),
-					DateSelector.LastMonthEnd());
+			this.setCalenderDate(this.lastMonthStart(),
+					this.LastMonthEnd());
 			break;
 		case "4":
-			DateSelector.setCalenderDate(DateSelector.LastSevenDay(),
-					DateSelector.siv_currentDate());
+			this.setCalenderDate(this.lastSevenDay(),
+					this.siv_currentDate());
 			break;
 		case "5":
-			DateSelector.setCalenderDate(DateSelector.Last30Days(),
-					DateSelector.siv_currentDate());
+			this.setCalenderDate(this.last30Days(),
+					this.siv_currentDate());
 			break;
 		default:
 		}
