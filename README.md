@@ -12,7 +12,7 @@ CalendarDateSelector is a particular date selector listed below for From and To 
 
 ## Version 1.0.0
 
-##Steps 
+## Steps 
 
 **First** : Include [siv.js](https://github.com/baladkb/calendarDateSelector/blob/master/siv.js) in HTML file 
 ```javascript
